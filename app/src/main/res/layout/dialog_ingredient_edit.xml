@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:ignore="HardcodedText">
+
+        <ImageView
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginBottom="@dimen/margin_s"
+            android:contentDescription="icon cancel"
+            android:src="@drawable/ic_cancel"
+            app:tint="?attr/colorAccent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_m"
+            android:gravity="end"
+            android:orientation="horizontal"
+            tools:ignore="RtlHardcoded">
+
+            <Button
+                android:id="@+id/delete_button"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_m"
+                android:drawableTint="@android:color/holo_red_dark"
+                android:text="Delete"
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="gone"
+                app:icon="@drawable/ic_trash"
+                app:iconTint="@android:color/holo_red_dark"
+                app:strokeColor="@android:color/holo_red_dark" />
+
+            <Button
+                android:id="@+id/confirm_button"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_save"
+                android:drawableTint="@color/white"
+                android:text="Save" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

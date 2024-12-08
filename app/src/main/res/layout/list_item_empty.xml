@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:drawableTint="@color/material_dynamic_primary50"
+        app:drawableTopCompat="@drawable/ic_newspaper"
+        android:text="No ingredients" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="The items you added will appear here"
+        android:textStyle="italic" />
+
+</LinearLayout>
