@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="HardcodedText">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="app.twentyhours.viewmodel.IngredientViewModel" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="HardcodedText">
 
         <include
             android:id="@+id/empty_view"
             layout="@layout/list_item_empty"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:visibility="@{viewModel.emptyViewVisibility}"
+            android:layout_weight="1"
+            android:text="No ingredients" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:visibility="gone"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:visibility="@{viewModel.recyclerViewVisibility}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -31,6 +39,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/margin_m"
             android:contentDescription="add new item button"
+            android:onClick="@{() -> viewModel.showInputDialog()}"
             android:src="@drawable/ic_add" />
     </LinearLayout>
 </layout>
